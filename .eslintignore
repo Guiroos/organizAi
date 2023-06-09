@@ -1,0 +1,16 @@
+node_modules
+dist
+build
+
+app.config.js
+app.config.ts
+
+babel.config.js
+
+metro.config.js
+metro.config.ts
+
+tailwind.config.js
+
+webpack.config.js
+webpack.config.ts
