@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "OrganizAi",
+    "slug": "organizai",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    // "splash": {
+    //   "images": "./assets/icon.png",
+    //   "resizeMode": "contain",
+    //   "backgroundColor": "#FF7323"
+    // },
+    "userInterfaceStyle": "light",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.guiroos.organizai",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to let user put a photo in his profile page."
+      }
+    },
+    "android": {
+      "package": "com.organizAi",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FF7323"
+      }
+    },
+    "web": {},
+    "extra": {
+      "eas": {
+        "projectId": "54701443-80ac-4f04-883b-c9e8bdf1d7a3"
+      }
+    },
+    "owner": "guiroos"
+  }
+}

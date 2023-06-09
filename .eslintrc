@@ -1,0 +1,103 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "simple-import-sort",
+    "@typescript-eslint",
+    "@tanstack/query"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      "tab",
+      {
+        "ignoredNodes": [
+          "CallExpression > FunctionExpression.callee > BlockStatement.body"
+        ],
+        "SwitchCase": 1
+      }
+    ],
+    "quotes": ["error", "double"],
+    "semi": ["error", "never"],
+    "object-curly-spacing": ["error", "always"],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "no-unused-vars": 0,
+    "react/prop-types": 0,
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-mixed-spaces-and-tabs": 0,
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*/.js", "*/.ts", "*/.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // `react` first, next second, then packages starting with a character
+              ["^react", "^react$", "^react-native", "^react-native$"],
+              // Absolute imports
+              ["^[a-z]", "^"],
+              // Packages starting with `@`
+              ["^@"],
+              // Imports starting with `../ first, then imports starting with `./`
+              [
+                "^\\.\\.(?!/?$)",
+                "^\\.\\./?$",
+                "^\\./(?=.*/)(?!/?$)",
+                "^\\.(?!/?$)"
+              ],
+              // Style imports
+              ["^.+\\.s?css$"],
+              // Type imports
+              [
+                "^node:.*\\u0000$",
+                "^@?\\w.*\\u0000$",
+                "^[^.].*\\u0000$",
+                "^\\..*\\u0000$"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+export { default as firebaseErrorAuth } from "./firebaseErrorAuth"
+export { default as getAge } from "./getAge"
+export { default as handleNavigate } from "./handleNavigate"
+export { default as initialEventDb } from "./initialEventDb"
+export { default as removeEmptyObjects } from "./removeEmptyObjects"
+export { default as sendWhatsApp } from "./sendWhatsApp"
